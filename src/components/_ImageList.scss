@@ -1,0 +1,76 @@
+.MuiBox-root {
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+
+    .img-box {
+        flex-basis: calc(33.33% - 25px);
+        height: 300px;
+        margin-bottom: 25px;
+        overflow: hidden;
+        cursor: zoom-in;
+        transition: all 0.2s;
+        position: relative;
+
+        .bg {
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            transition: all 0.4s;
+            width: 100%;
+            height: 100%;
+
+
+            &:hover {
+                -webkit-transform: scale(1.1);
+                -ms-transform: scale(1.1);
+                transform: scale(1.1);
+            }
+        }
+
+        .hover-info {
+            position: absolute;
+            left: 0;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            color: #fff;
+
+            &::after {
+                display: none;
+                content: '';
+                background-color: #0e4cb0;
+                position: absolute;
+                left: 0;
+                top: 0;
+                right: 0;
+                bottom: 0;
+                transition: opacity 0.2s;
+            }
+
+            .MuiButtonBase-root {
+                position: absolute;
+                left: 0;
+                right: 0;
+                bottom: 10px;
+                margin: auto;
+                width: 120px;
+            }
+
+            .resolution {
+                display: block;
+                font-size: 24px;
+                margin-top: 10pxo;
+                text-align: center;
+            }
+        }
+
+        &:hover {
+            .hover-info::after {
+                display: block;
+                opacity: 0.7;
+            }
+        }
+    }
+}

@@ -1,0 +1,19 @@
+.searchContainer {
+    h1 {
+        text-align: center
+    }
+
+    form {
+        display: flex;
+        align-items: stretch;
+        justify-content: center;
+
+        button {
+            margin-left: 15px;
+        }
+    }
+
+    .MuiOutlinedInput-root:hover .MuiOutlinedInput-notchedOutline {
+        border-color: #3f51b5;
+    }
+}
