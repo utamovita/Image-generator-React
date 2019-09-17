@@ -16,10 +16,12 @@ class App extends React.Component {
 
     render() {
         return (
-            <Container>
-                <SearchBar onSubmit={this.onSearchSubmit} />
-                <ImageList images={this.state.images} />
-            </Container>
+            <div>
+                <Container>
+                    <SearchBar onSubmit={this.onSearchSubmit} />
+                    <ImageList images={this.state.images} />
+                </Container>
+            </div>
         )
     }
 }

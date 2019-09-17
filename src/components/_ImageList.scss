@@ -9,67 +9,85 @@
         height: 300px;
         margin-bottom: 25px;
         overflow: hidden;
-        cursor: zoom-in;
         transition: all 0.2s;
         position: relative;
+        -webkit-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);
+        -moz-box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);
+        box-shadow: 0px 0px 3px 0px rgba(0, 0, 0, 0.75);
 
-        .bg {
-            background-position: center;
-            background-size: cover;
-            background-repeat: no-repeat;
-            transition: all 0.4s;
+        .zoom-in {
+            cursor: zoom-in;
+            display: block;
             width: 100%;
             height: 100%;
+            -webkit-transform: scale(1.05);
+            -ms-transform: scale(1.05);
+            transform: scale(1.05);
 
+            div {
+                position: relative;
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                transition: all 0.3s;
+                width: 100%;
+                height: 100%;
 
-            &:hover {
-                -webkit-transform: scale(1.1);
-                -ms-transform: scale(1.1);
-                transform: scale(1.1);
+                &::after {
+                    content: "";
+                    display: block;
+                    height: 100%;
+                    width: 100%;
+                    background: rgba(0, 0, 0, 0);
+                    -moz-transition: all .3s;
+                    -webkit-transition: all .3s;
+                    transition: all .3s;
+                }
             }
         }
 
-        .hover-info {
+        .download {
             position: absolute;
             left: 0;
-            top: 0;
             right: 0;
-            bottom: 0;
-            color: #fff;
-
-            &::after {
-                display: none;
-                content: '';
-                background-color: #0e4cb0;
-                position: absolute;
-                left: 0;
-                top: 0;
-                right: 0;
-                bottom: 0;
-                transition: opacity 0.2s;
-            }
-
-            .MuiButtonBase-root {
-                position: absolute;
-                left: 0;
-                right: 0;
-                bottom: 10px;
-                margin: auto;
-                width: 120px;
-            }
-
-            .resolution {
-                display: block;
-                font-size: 24px;
-                margin-top: 10pxo;
-                text-align: center;
-            }
+            bottom: -50px;
+            margin: auto;
+            width: 120px;
+            transition: all .2s;
         }
 
-        &:hover {
-            .hover-info::after {
-                display: block;
-                opacity: 0.7;
+        .resolution {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: -50px;
+            display: block;
+            font-size: 24px;
+            text-align: center;
+            transition: all .2s;
+            color: white;
+            text-shadow: 2px 2px 4px #000000;
+            margin: auto;
+            max-width: 150px;
+        }
+
+        &.hovered {
+            .resolution {
+                top: 15px;
+            }
+
+            .download {
+                bottom: 15px;
+            }
+
+            .zoom-in div {
+                -webkit-transform: scale(1.15);
+                -ms-transform: scale(1.15);
+                transform: scale(1.15);
+
+                &::after {
+                    background: rgba(0, 0, 0, 0.3);
+                }
             }
         }
     }
