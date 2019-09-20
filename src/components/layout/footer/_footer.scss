@@ -1,0 +1,103 @@
+$grey: #757271;
+
+footer {
+    border-top: 1px solid #eeeded;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    padding: 15px 0;
+    text-align: center;
+    color: $grey;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 30px;
+    font-weight: 300;
+    background-color: #fff;
+
+    .MuiContainer-root {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+
+        .contact {
+            display: inline-block;
+
+            h3 {
+                text-align: left;
+            }
+
+            ul {
+                list-style-type: none;
+                margin: 0;
+                position: relative;
+                top: -3px;
+                padding: 0;
+
+                li {
+                    display: inline-block;
+                    margin-right: 50px;
+
+                    svg {
+                        height: 100%;
+                        width: auto;
+                    }
+
+                    a {
+
+                        font-size: 16px;
+                        color: $grey;
+                        text-decoration: none;
+
+                        .mail {
+                            width: 30px;
+                            position: relative;
+                            top: 8px;
+                            margin-right: 10px;
+                        }
+
+                        .phone {
+                            width: 16px;
+                            position: relative;
+                            top: 7px;
+                            margin-right: 10px;
+                        }
+                    }
+                }
+            }
+        }
+
+        .socials {
+            h3 {
+                text-align: left;
+            }
+
+            ul {
+                display: inline-block;
+                list-style-type: none;
+                margin: 0;
+                padding-left: 0;
+
+                li {
+                    display: inline-block;
+                    margin: 0 10px;
+
+                    a {
+                        display: inline-block;
+                        color: $grey;
+                        opacity: 0.8;
+                        width: 30px;
+
+                        svg {
+                            width: 100%;
+                            height: 100%;
+                        }
+
+                        &:hover {
+                            opacity: 1;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
